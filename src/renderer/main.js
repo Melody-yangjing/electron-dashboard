@@ -9,6 +9,7 @@ import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 import App from './App'
 import router from './router'
 import store from './store'
+import i18n from './lang' // Internationalization
 
 import '@/icons' // icon
 import '@/permission' // permission control
@@ -23,5 +24,6 @@ new Vue({
   components: { App },
   router,
   store,
+  i18n,
   template: '<App/>'
 }).$mount('#app')
