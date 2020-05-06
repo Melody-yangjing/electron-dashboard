@@ -39,16 +39,7 @@
 
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">{{ $t('login.logIn') }}</el-button>
 
-      <div style="position:relative">
-        <div class="tips">
-          <span>{{ $t('login.username') }} : admin</span>
-          <span>{{ $t('login.password') }} : admin</span>
-        </div>
-        <div class="tips">
-          <span style="margin-right:18px;">{{ $t('login.username') }} : developer</span>
-          <span>{{ $t('login.password') }} : developer</span>
-        </div>
-      </div>
+
     </el-form>
 
 
@@ -115,12 +106,20 @@ export default {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
-          this.$store.dispatch('user/login', this.loginForm).then(() => {
-            this.loading = false
-            this.$router.push({ path: this.redirect })
-          }).catch((err) => {
-            this.loading = false
+          this.$store.dispatch('user/login', this.loginForm).then(()=>{
+            console.log('jj');
+            console.log(this.$router);
+            this.$router.push({path:'/layout'})
+          }).catch(err=>{
+             this.loading = false
           })
+          
+          // .then(() => {
+          //   this.loading = false
+          //   this.$router.push({ path: this.redirect })
+          // }).catch((err) => {
+          //   this.loading = false
+          // })
         } else {
           return false
         }

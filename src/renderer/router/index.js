@@ -24,7 +24,17 @@ export const constantRouterMap = [
   { path: '/login', component: () => import('@/views/login/index'), hidden: true },
   { path: '/404', component: () => import('@/views/404'), hidden: true },
 
-
+  {
+    path: '/layout',
+    component: ()=> import('@/views/layout/index'),
+    // redirect: '/dashboard',
+    // children: [{
+    //   path: 'dashboard',
+    //   name: 'Dashboard',
+    //   component: () => import('@/views/dashboard/index'),
+    //   meta: { title: 'dashboard', icon: 'dashboard', affix: true }
+    // }]
+  },
 
   { path: '*', redirect: '/404', hidden: true }
 ]
