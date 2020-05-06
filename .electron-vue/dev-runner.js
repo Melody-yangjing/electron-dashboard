@@ -64,6 +64,15 @@ function startRenderer () {
       {
         contentBase: path.join(__dirname, '../'),
         quiet: true,
+        proxy:{
+          '/api':{
+            target:'http://localhost:8082',
+            changeOrigin:true,
+            pathRewrite:{
+              '^/api':''
+            }
+          }
+        },
         before (app, ctx) {
           app.use(hotMiddleware)
           ctx.middleware.waitUntilValid(() => {
