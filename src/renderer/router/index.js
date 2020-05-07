@@ -6,6 +6,8 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
+const Layout = ()=> import('@/views/layout/index')
+
 /* Layout */
 
 /**
@@ -20,20 +22,51 @@ Vue.use(Router)
     icon: 'svg-name'             the icon show in the sidebar,
   }
 **/
-export const constantRouterMap = [
+export const constantRoutes = [
   { path: '/login', component: () => import('@/views/login/index'), hidden: true },
   { path: '/404', component: () => import('@/views/404'), hidden: true },
 
   {
-    path: '/layout',
-    component: ()=> import('@/views/layout/index'),
-    // redirect: '/dashboard',
-    // children: [{
-    //   path: 'dashboard',
-    //   name: 'Dashboard',
-    //   component: () => import('@/views/dashboard/index'),
-    //   meta: { title: 'dashboard', icon: 'dashboard', affix: true }
-    // }]
+    path: '/',
+    component: Layout ,
+    redirect: '/dashboard',
+    children: [{
+      path: 'dashboard',
+      name: 'Dashboard',
+      component: () => import('@/views/dashboard/index'),
+      meta: { title: 'dashboard', icon: 'dashboard', affix: true }
+    }]
+  },
+  {
+    path: '/account',
+    component: Layout,
+    hidden: true,
+    redirect: 'noredirect',
+    children: [
+      {
+        path: 'profile',
+        name: '个人资料',
+        component: () => import('@/views/account/profile.vue'),
+
+        meta: { title: '个人资料' }
+
+      },
+      {
+        path: 'timeline',
+        name: '最近活动',
+        component: () => import('@/views/account/timeline.vue'),
+        hidden: true,
+        meta: { title: '最近活动' }
+
+      },
+      // {
+      //   path: 'updatePwd',
+      //   name: '修改密码',
+      //   component: () => import('@/views/account/updatePwd.vue'),
+      //   hidden: true,
+      //   meta: { title: '修改密码' }
+      // }
+    ]
   },
 
   { path: '*', redirect: '/404', hidden: true }
@@ -42,6 +75,6 @@ export const constantRouterMap = [
 export default new Router({
   // mode: 'history', //后端支持可开
   scrollBehavior: () => ({ y: 0 }),
-  routes: constantRouterMap
+  routes: constantRoutes
 })
 

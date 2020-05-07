@@ -7,7 +7,7 @@
     <div class="right-menu">
 
         <template>
-          <a target="_blank" href="https://www.aliyun.com/1111/2019/home?userCode=alts44ap" style="vertical-align: text-bottom;color:lightblue;">2019双11All in cloud低至一折</a>
+          <a target="_blank" href="https://www.aliyun.com/1111/2019/home?userCode=alts44ap" style="vertical-align: text-bottom;color:lightblue;">welcome instrument dashboard</a>
         </template>
         <template>
           <lang-select class="international right-menu-item"/>
@@ -46,25 +46,24 @@
 
 export default {
   components: {
-    Breadcrumb,
-    Hamburger,
-    LangSelect
+      Breadcrumb,
+      Hamburger,
+      LangSelect
   },
   computed: {
-    ...mapGetters([
-      'sidebar',
-      'avatar'
-    ])
+      ...mapGetters([
+        'sidebar',
+        'avatar'
+      ])
   },
   methods: {
-    toggleSideBar() {
-      this.$store.dispatch('app/toggleSideBar')
-    },
-    async logout() {
-      await this.$store.dispatch('user/logout')
-      this.$router.push('/login')
-
-    }
+      toggleSideBar() {
+        this.$store.dispatch('app/toggleSideBar')
+      },
+      async logout() {
+        await this.$store.dispatch('user/logout')
+        this.$router.push('/login')
+      }
   }
 }
 </script>

@@ -42,7 +42,7 @@
         fileUrl: '',
         uploadHeaders: {
           'Authorization': ''
-        },
+        }
       }
     },
     created() {

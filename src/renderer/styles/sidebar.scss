@@ -173,6 +173,10 @@
   }
 }
 
+.nest-menu .el-menu-item{
+  color: #bfcbd9!important;
+}
+
 // when menu collapsed
 .el-menu--vertical {
   &>.el-menu {
@@ -180,6 +184,8 @@
       margin-right: 16px;
     }
   }
+
+
 
   .nest-menu .el-submenu>.el-submenu__title,
   .el-menu-item {

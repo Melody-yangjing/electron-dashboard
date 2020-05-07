@@ -95,3 +95,12 @@ export default {
   }
 }
 </script>
+<style lang='scss'>
+  .menu-wrapper{
+    background-color: #304156;
+    color: #bfcbd9!important;
+    .el-submenu__title{
+      color: #bfcbd9!important;
+    }
+  }
+</style>

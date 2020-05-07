@@ -54,15 +54,19 @@
   },
   "dependencies": {
     "axios": "0.17.1",
-    "element-ui": "2.3.4",
+    "echarts": "^4.7.0",
+    "element-resize-detector": "^1.2.1",
+    "element-ui": "^2.13.1",
     "js-cookie": "^2.2.0",
     "normalize.css": "7.0.0",
     "nprogress": "0.2.0",
     "vue": "2.5.10",
+    "vue-echarts": "^5.0.0-beta.0",
     "vue-electron": "^1.0.6",
     "vue-i18n": "^8.17.4",
     "vue-router": "3.0.1",
-    "vuex": "3.0.1"
+    "vuex": "3.0.1",
+    "zrender": "^4.3.1"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",

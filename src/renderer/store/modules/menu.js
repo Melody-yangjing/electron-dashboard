@@ -19,9 +19,10 @@ const actions = {
     return new Promise((resolve, reject) => {
       listForRouter().then(response => {
         const menus = response.data
-        let remoteroutes = traverseRoutes(menus)
-        commit('SET_ROUTES',remoteroutes);
-        resolve(remoteroutes);
+        console.log('============', menus)
+        const remoteroutes = traverseRoutes(menus)
+        commit('SET_ROUTES', remoteroutes)
+        resolve(remoteroutes)
       }).catch(error => {
         reject(error)
       })
